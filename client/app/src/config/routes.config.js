@@ -28,5 +28,10 @@ angular
         url: '^/onboarding',
         templateUrl: 'src/layouts/onboarding/onboarding.layout.html',
         controller: 'OnboardingLayout'
+      })
+      .state('login', {
+        url: '^/login',
+        templateUrl: 'src/layouts/login.html',
+        controller: 'LoginController'
       });
   });
