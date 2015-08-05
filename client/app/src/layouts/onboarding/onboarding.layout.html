@@ -1,13 +1,36 @@
-<div layout="column" layout-margin layout-align="center">
-  <div layout="row" layout-align="center" layout-margin>
-    <span>Hello, Imam! Before you start on the journey, please configure your team first. You'll find it easier to track them later!</span>
-  </div>
+<div layout="row" layout-align="center">
+  <div layout="column" layout-margin layout-align="center">
+    <div layout="row" layout-align="center" layout-margin>
+      <span>Hello, Imam! Before you start on the journey, please configure your team first. You'll find it easier to track them later!</span>
+    </div>
 
-  <div layout="row" layout-align="center" layout-margin>
-    <ds-tm-steps-indicator num-steps="3" cur-step="0">
-    </ds-tm-steps-indicator>
-  </div>
+    <div layout="row" layout-align="center" layout-margin>
+      <ds-tm-steps-indicator num-steps="4" cur-step="curStep">
+      </ds-tm-steps-indicator>
+    </div>
 
-  <!-- steps specific directive goes here -->
-  <ds-tm-team-config></ds-tm-team-config>
+    <!-- steps specific directive goes here -->
+
+    <div layout="column" ng-if="curStep == 0">
+      <h3>Team Configuration</h3>
+      <ds-tm-team-config></ds-tm-team-config>
+    </div>
+    <div layout="column" ng-if="curStep == 1">
+      <h3>Account Configuration</h3>
+      <ds-tm-team-config></ds-tm-team-config>
+    </div>
+    <div layout="column" ng-if="curStep == 2">
+      <h3>Member Configuration</h3>
+      <ds-tm-team-config></ds-tm-team-config>
+    </div>
+    <div layout="column" ng-if="curStep == 3">
+      <h3>KPI Configuration</h3>
+      <ds-tm-team-config></ds-tm-team-config>
+    </div>
+
+    <!-- next button -->
+    <div layout="row" layout-align="end center">
+      <md-button class="md-raised md-primary" ng-click="nextStep()">Next</md-button>
+    </div>
+  </div>
 </div>

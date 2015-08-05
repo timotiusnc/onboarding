@@ -6,8 +6,8 @@ angular.module('dsTmApp')
       templateUrl: 'src/shared-directives/steps-indicator/steps-indicator.de.html',
       restrict: 'E',
       scope: {
-        curStep: '@',
-        numSteps: '@'
+        curStep: '=',
+        numSteps: '='
       },
       controller: 'StepsIndicatorCtrl'
     };
