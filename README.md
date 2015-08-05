@@ -16,7 +16,7 @@ Onboarding mock-up for [ombaq.com](https://ombaq.com)
 1. (Optional) [Install livereload browser extension](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions).
 2. Go into `client` folder.
 3. Type in `grunt serve` (you can not do `grunt serve` on more than one folder in one machine).
-4. Open `https://ombaq-rt.com` in your browser & optionally enable livereload extension.
+4. Open `https://onboarding.local` in your browser & optionally enable livereload extension.
 
 If you encountered a warning after `grunt serve` like this:
 
