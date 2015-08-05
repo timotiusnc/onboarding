@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('dsTmApp.screens')
-.controller('WorkspaceLayout', function($timeout, $scope, $firebaseObject, $firebaseArray, TM_REF) {
+.controller('WorkspaceLayout', function($timeout, $scope, $firebaseObject, $firebaseArray, TM_REF, Firebase) {
   var tweetsRef = new Firebase(TM_REF.TWEETS);
   var tweetRef = null;
   $scope.tweet = null;
   $scope.isTweetLoading = true;
   $scope.answerTweet = answerTweet;
-  $scope.response = {name: '', message: ''}
+  $scope.response = {name: '', message: ''};
 
   getUnansweredTweet();
 
@@ -38,16 +38,20 @@ angular.module('dsTmApp.screens')
   function answerTweet() {
     $scope.tweet.answered = 2;
     $scope.tweet.response = $scope.response;
-    $scope.response = {name: '', message: ''}
+    $scope.response = {name: '', message: ''};
     $scope.tweet.$save();
 
     getUnansweredTweet();
   }
 
   angular.element(window).bind('unload', function(e) {
-    if ($scope.tweet.answered == 1) {
+    if ($scope.tweet.answered === 1) {
       $scope.tweet.answered = 0;
       $scope.tweet.$save();
     }
   });
+
+  $scope.onKpiSave = function(kpis) {
+    console.log(kpis);
+  };
 });

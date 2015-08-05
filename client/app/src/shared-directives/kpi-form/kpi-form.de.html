@@ -1,0 +1,28 @@
+<div layout="row" layout-wrap ng-repeat="kpi in model">
+  <div flex="50">
+    <md-checkbox ng-model="kpi.checked" aria-label="kpi.title">
+      {{kpi.title}}
+    </md-checkbox>
+  </div>
+
+  <div flex="50" ng-switch="kpi.type">
+    <div layout="row" ng-switch-when="amount">
+      <md-select ng-model="kpi.value" placeholder="Amount">
+        <md-option ng-repeat="val in getNumber(60) track by $index" value="{{val}}">{{val}} per person</md-option>
+      </md-select>
+    </div>
+
+    <div layout="row" ng-switch-when="time">
+      <md-select ng-model="kpi.value_min" placeholder="Amount" flex="50">
+        <md-option ng-repeat="val in getNumber(60) track by $index" value="{{val}}">{{val}} min</md-option>
+      </md-select>
+      <md-select ng-model="kpi.value_sec" placeholder="Amount" flex="50">
+        <md-option ng-repeat="val in getNumber(60) track by $index" value="{{val}}">{{val}} sec</md-option>
+      </md-select>
+    </div>
+  </div>
+</div>
+
+<div layout="row" layout-align="end center">
+  <md-button class="md-raised md-primary" ng-click="save()">Save Changes</md-button>
+</div>

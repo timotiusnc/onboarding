@@ -11,7 +11,7 @@ angular.module('dsTmApp.components')
       controller: 'QueueCtrl'
     };
   })
-  .controller('QueueCtrl', function($scope, $firebaseArray, TM_REF) {
+  .controller('QueueCtrl', function($scope, $firebaseArray, TM_REF, Firebase) {
     var ref = new Firebase(TM_REF.TWEETS);
     $scope.tweets = $firebaseArray(ref);
     $scope.isTweetLoading = true;
