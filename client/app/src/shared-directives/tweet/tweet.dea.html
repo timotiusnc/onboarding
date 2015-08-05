@@ -1,0 +1,20 @@
+<img ng-src="{{model.user.profile_image_url_https}}" alt="" class="circle">
+
+<div class="title">{{model.user.screen_name}}</div>
+<small>{{model.created_at}}</small>
+<p>{{model.text}}</p>
+
+<div><small ng-show="{{showCtrl}}">Responded by: {{model.response.name}}</small></div>
+<div><small ng-show="{{showCtrl}}">Response: {{model.response.message}}</small></div>
+
+<a class="waves-effect waves-light btn" ng-click="makeAnswered(model)" ng-show="!isBeingAnswered() && !isAnswered() && {{showCtrl}}">
+  Answer
+</a>
+
+<a class="waves-effect waves-light btn disabled" ng-show="isBeingAnswered() && {{showCtrl}}">
+  In progress
+</a>
+
+<a class="waves-effect waves-light btn" ng-click="makeUnanswered(model)" ng-show="isAnswered() && {{showCtrl}}">
+  Un-answer
+</a>

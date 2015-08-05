@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="workspace col s12 m12 l8 row">
+    <div class="col s12 center-align" ng-show="isTweetLoading">
+      Hello world...
+    </div>
+
+    <div class="col s12" ng-show="!isTweetLoading">
+      <div class="col s12" ds-tm-tweet model="tweet" show-ctrl="false"></div>
+
+      <div class="col s12 input-field">
+        <input id="name" type="text" ng-model="response.name">
+        <label for="name">Your Name</label>
+      </div>
+
+      <div class="col s12 input-field">
+        <input id="response" type="text" ng-model="response.message">
+        <label for="response">Your Response</label>
+      </div>
+
+      <div class="col s12 right-align">
+        <a class="waves-effect waves-light btn" ng-click="answerTweet()">
+          Answer
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m12 l4 row">
+    <ds-tm-queue></ds-tm-queue>
+  </div>
+</div>
