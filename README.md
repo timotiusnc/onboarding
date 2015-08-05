@@ -34,3 +34,8 @@ from: [StackOverflow](http://stackoverflow.com/questions/16748737/grunt-watch-er
 
 1. `grunt build`.
 2. Find the resulting build in `dist` folder.
+
+## Deploying
+
+1. ./gh-deploy.sh
+2. There is no step 2!
