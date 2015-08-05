@@ -10,10 +10,11 @@ angular.module('dsTmApp.components')
   })
   .controller('TeamConfigCtrl', function($scope, TeamInputDialogService) {
     $scope.showTeamInputDialog = showTeamInputDialog;
+    $scope.teams = [];
 
     function showTeamInputDialog(){
       TeamInputDialogService.open().then(function(ans){
-        console.log(ans);
+        $scope.teams.push(ans);
       });
     }
   });
