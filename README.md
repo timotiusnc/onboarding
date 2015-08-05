@@ -1,6 +1,6 @@
-# angular-template
+# Onboarding
 
-Personal template for angular project
+Onboarding mock-up for [ombaq.com](https://ombaq.com)
 
 ## Getting Started For Development
 
@@ -9,9 +9,7 @@ Personal template for angular project
 		
 		./setup.sh
 
-2. Setup `/etc/hosts`
-		
-		sudo tools/misc/setup-hosts.sh
+2. There is no step 2!
 
 ### Client Development Steps
 
