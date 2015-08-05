@@ -2,6 +2,7 @@
 
 angular
   .module('dsTmApp', [
+    'ngMaterial',
     'dsTmApp.screens',
     'dsTmApp.models',
     'dsTmApp.components',
