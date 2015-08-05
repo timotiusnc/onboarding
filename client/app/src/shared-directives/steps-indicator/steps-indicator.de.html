@@ -1,3 +1,6 @@
-<md-button ng-repeat="n in steps" class="md-fab">
-  {{ n+1 }}
-</md-button>
+<span ng-repeat="n in steps">
+  <md-button class="md-fab md-mini" ng-disabled="n != curStep">
+    {{ n+1 }}
+  </md-button>
+  <div style="display:inline-block; width: 100px; border: 1px solid #cccccc;" ng-if="!$last"></div>
+</span>
