@@ -16,12 +16,16 @@ angular.module('dsTmApp')
     var newAccount = {
       id: -1,
       role: '',
-    }
+    };
 
     $scope.user.accounts.push(_.clone(newAccount, true));
 
-    $scope.addAccount = function (account) {
+    $scope.addAccount = function () {
       $scope.user.accounts.push(_.clone(newAccount, true));
+    };
+
+    $scope.deleteAccount = function (idx) {
+      $scope.user.accounts.splice(idx, 1);
     };
 
     $scope.accounts = [
