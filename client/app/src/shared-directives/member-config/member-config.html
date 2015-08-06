@@ -1,0 +1,12 @@
+<div layout="column" style="max-width: 600px;">
+
+  <div ng-repeat="user in users track by $index" layout-align="center">
+    <member-input user="user"></member-input>
+    <md-divider />
+  </div>
+
+  <div style="margin: 16px auto;">
+    <md-button class="md-primary" ng-click="addUser()">Add More User</md-button>
+  </div>  
+
+</div>
