@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('dsTmApp.screens')
-  .controller('LoginController', function($, $scope) {
+  .controller('LoginController', function($state, TM_stateConst, $scope) {
 
-  	$scope.login = function login() {
-  		console.log('login');
-  	}
+   $scope.login = function login() {
+     $state.go(TM_stateConst.ONBOARDING);
+   };
 
   });

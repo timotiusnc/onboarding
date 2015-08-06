@@ -7,7 +7,7 @@ angular
     WORKSPACE: 'rt.workspace',
     QUEUE: 'rt.queue',
     ONBOARDING: 'onboarding',
-    ONBOARDING_FINISH:'onboarding-finish'
+    ONBOARDING_FINISH:'onboardingfinish'
   })
   .config(function ($stateProvider, $urlRouterProvider, TM_stateConst) {
     $urlRouterProvider
@@ -30,10 +30,10 @@ angular
         templateUrl: 'src/layouts/onboarding/onboarding.layout.html',
         controller: 'OnboardingLayout'
       })
-      .state('TM_stateConst.ONBOARDING_FINISH', {
-        url: '^/onboarding-finish',
-        templateUrl: 'src/layouts/login.html',
-        controller: 'LoginController'
+      .state(TM_stateConst.ONBOARDING_FINISH, {
+        url: '/finish',
+        templateUrl: 'src/layouts/onboarding-finish/onboarding-finish.layout.html',
+        controller: 'OnboardingFinishLayoutCtrl'
       })
       .state('login', {
         url: '^/login',
