@@ -1,0 +1,50 @@
+<md-dialog style="width: 60%;">
+  <form>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Add Account</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="close()">
+        <strong>X</strong>
+      </md-button>
+    </div>
+  </md-toolbar>
+
+  <md-dialog-content>
+    <div layout="column">
+
+      <div layout="row" layout-align="center">
+        
+        <md-button ng-class="{ 'md-primary': search.source === 'Facebook' }" ng-click="facebook()">Add Facebook Page</md-button>
+        <md-button ng-class="{ 'md-primary': search.source === 'Twitter' }" ng-click="twitter()">Add Twitter Account</md-button>
+
+      </div>
+
+      <div layout="column">
+
+        <md-input-container>
+          <label>Search</label>
+          <input ng-model="search.username" type="text">
+        </md-input-container>
+
+        <md-list>
+          <div ng-repeat="account in accounts | filter: search">
+            <md-list-item class="md-3-line" ng-class="{ selected: selected.id === account.id }" ng-click="select(account)">
+              <div class="md-list-item-text">
+                <h3>{{ account.username }}</h3>
+                <h4>{{ account.source }}</h4>
+              </div>
+            </md-list-item>
+          </div>
+        </md-list>
+
+      </div>
+
+    </div>
+  </md-dialog-content>
+
+  <div class="md-actions" layout="row">
+    <md-button class="md-primary" ng-click="add()">Add</md-button>
+  </div>
+  </form>
+</md-dialog>

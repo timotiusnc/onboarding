@@ -14,5 +14,5 @@ angular.module('dsTmApp.components')
     $scope.teamName = '';
     $scope.onCreated = function(){
       $mdDialog.hide($scope.teamName);
-    }
+    };
   });
