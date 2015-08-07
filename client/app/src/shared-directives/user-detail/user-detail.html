@@ -1,4 +1,4 @@
-<div layout="column" style="max-width: 50%" flex>
+<div layout="column" style="" flex>
 
   <div style="padding: 8px;">
     <span style="font-weight: 500">Email: </span>{{ user.email }}
@@ -22,7 +22,7 @@
       
     <div layout="column" ng-repeat="userAccount in user.accounts track by $index" style="padding: 8px;" flex>
 
-      <div layout="row" layout-margin flex>
+      <div layout="row" layout-padding flex>
         <div flex="5">
           <i class="fa" ng-class="{ 'fa-facebook-square': userAccount.source === 'Facebook', 'fa-twitter-square': userAccount.source === 'Twitter' }"></i>
         </div>
@@ -32,10 +32,8 @@
 
       <md-divider></md-divider>
 
-      <div layout="row" layout-align="end center">
-
-        <div flex="50" align="right">{{ user.username }}</div>
-
+      <div layout="row" layout-padding layout-align="space-between center">
+        <div flex="50">{{ user.username }}</div>
         <div flex="25" align="right" style="margin: 8px;">
           <select ng-model="userAccount.role">
             <option value="admin">Admin</option>
@@ -43,7 +41,6 @@
             <option value="member">Member</option>
           </select>
         </div>
-
       </div>
 
     </div>
