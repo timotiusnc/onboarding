@@ -1,0 +1,25 @@
+<div layout="column">
+  <div layout="row" layout-align="start center">
+    <span flex>@Bizguide BCA</span>
+    <md-button flex ng-click="addUser()">
+      <img src="/images/add-user.png">
+    </md-button>
+  </div>
+  <div ng-repeat="user in users">
+    <div layout="row" flex>
+      <div flex layout="row" layout-align="start center">
+        <span>{{user.name}}</span>
+      </div>
+      <div layout="column" flex>
+        <md-select placeholder="{{user.role}}" ng-model="user.role">
+          <md-option value="Admin">Admin</md-option>
+          <md-option value="Member">Member</md-option>
+        </md-select>
+        <a href="">Save changes</a>
+      </div>
+      <md-button flex ng-click="deleteUser(user.name)">
+        <img src="/images/delete.png">
+      </md-button>
+    </div>
+  </div>
+</div>
