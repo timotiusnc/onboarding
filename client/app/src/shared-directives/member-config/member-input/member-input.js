@@ -32,4 +32,8 @@ angular.module('dsTmApp')
       return SocmedService.owned;
     };
 
+    $scope.getAccountType = function(x) {
+      return x.type == 'Twitter' ? 'Tw' : 'Fb'; 
+    }
+
   });

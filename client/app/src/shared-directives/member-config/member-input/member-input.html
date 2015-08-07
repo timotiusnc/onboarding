@@ -11,7 +11,7 @@
     <div layout="row" ng-repeat="userAccount in user.accounts track by $index" layout-align="space-between">
 
       <md-select placeholder="Assigned Accounts" ng-model="userAccount.id" style="padding-bottom: 8px; padding-right: 16px;">
-        <md-option ng-repeat="account in accounts()" value="{{ account.id }}">{{ account.username }}</md-option>
+        <md-option ng-repeat="account in accounts()" value="{{ account.id }}">[{{getAccountType(account)}}] {{ account.username }}</md-option>
       </md-select>
 
       <md-select placeholder="Choose Role" ng-model="userAccount.role" style="padding-bottom: 8px;">
