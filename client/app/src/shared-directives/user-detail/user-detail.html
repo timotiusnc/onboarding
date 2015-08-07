@@ -1,0 +1,53 @@
+<div layout="column" style="max-width: 50%" flex>
+
+  <div style="padding: 8px;">
+    <span style="font-weight: 500">Email: </span>{{ user.email }}
+  </div>
+
+  <div layout="row" style="padding: 8px;" flex>
+
+    <div layout="column" flex="50">
+      <div style="font-weight: 500">Login with:</div>
+      <div>{{ user.email }}</div>
+    </div>
+
+    <div layout="column" flex="50">
+      <div style="font-weight: 500">Last seen:</div>
+      <div>{{ user.last_seen }}</div>
+    </div>
+
+  </div>
+
+  <div flex>
+      
+    <div layout="column" ng-repeat="userAccount in user.accounts track by $index" style="padding: 8px;" flex>
+
+      <div layout="row" layout-margin flex>
+        <div flex="5">
+          <i class="fa" ng-class="{ 'fa-facebook-square': userAccount.source === 'Facebook', 'fa-twitter-square': userAccount.source === 'Twitter' }"></i>
+        </div>
+        <div flex="90">{{ userAccount.username }}</div>
+        <div flex="5"><a href=""><i class="fa fa-trash-o"></i></a></div>
+      </div>
+
+      <md-divider></md-divider>
+
+      <div layout="row" layout-align="end center">
+
+        <div flex="50" align="right">{{ user.username }}</div>
+
+        <div flex="25" align="right" style="margin: 8px;">
+          <select ng-model="userAccount.role">
+            <option value="admin">Admin</option>
+            <option value="cs">CS</option>
+            <option value="member">Member</option>
+          </select>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
