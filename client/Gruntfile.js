@@ -393,7 +393,7 @@ module.exports = function (grunt) {
           expand: true,    
           cwd: 'bower_components/font-awesome/fonts/',
           src: '**/*',   
-          dest: '<%= yeoman.dist %>/font'
+          dest: '<%= yeoman.dist %>/fonts'
          }]
       },
       styles: {
