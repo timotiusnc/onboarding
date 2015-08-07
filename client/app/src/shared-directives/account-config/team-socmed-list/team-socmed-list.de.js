@@ -11,7 +11,7 @@ angular.module('dsTmApp.components')
       controller: 'SocmedListCtrl'
     };
   })
-  .controller('SocmedListCtrl', function($scope){
+  .controller('SocmedListCtrl', function($scope, AccountAddDialog){
     $scope.socmeds = [];
     $scope.assignAccount = assignAccount;
     $scope.removeSocmed = removeSocmed;
@@ -22,6 +22,7 @@ angular.module('dsTmApp.components')
     }
 
     function assignAccount(){
+      AccountAddDialog.open();
       $scope.socmeds.push('@HaloBCA' + $scope.socmeds.length);
     }
   });

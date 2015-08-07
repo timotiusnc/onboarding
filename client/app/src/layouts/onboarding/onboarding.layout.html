@@ -5,7 +5,7 @@
     </div>
 
     <div layout="row" layout-align="center" layout-margin>
-      <ds-tm-steps-indicator num-steps="4" cur-step="curStep">
+      <ds-tm-steps-indicator num-steps="3" cur-step="curStep">
       </ds-tm-steps-indicator>
     </div>
 
@@ -21,13 +21,14 @@
     </div>
     <div layout="column" ng-if="curStep == 2">
       <h3>Member Configuration</h3>
-      <ds-tm-team-config></ds-tm-team-config>
+      <member-config></member-config>
     </div>
+    <!-- 
     <div layout="column" ng-if="curStep == 3">
       <h3>KPI Configuration</h3>
       <ds-tm-team-config></ds-tm-team-config>
     </div>
-
+    -->
     <!-- next button -->
     <div layout="row" layout-align="end center">
       <md-button class="md-raised md-primary" ng-click="nextStep()">Next</md-button>

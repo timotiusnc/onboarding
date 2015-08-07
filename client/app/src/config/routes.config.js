@@ -11,7 +11,7 @@ angular
   })
   .config(function ($stateProvider, $urlRouterProvider, TM_stateConst) {
     $urlRouterProvider
-      .otherwise('/');
+      .otherwise('/onboarding');
 
     // Now set up the states
     $stateProvider
