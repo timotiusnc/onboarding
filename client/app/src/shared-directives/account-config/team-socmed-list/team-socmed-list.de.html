@@ -1,8 +1,8 @@
 <md-card>
-  <div>{{team}}</div>
+  <div>{{team.name}}</div>
   <md-button class="md-raised" ng-click="assignAccount()">Assigned Account +</md-button>
 </md-card>
-<div ng-repeat="socmed in socmeds">
-  <span>{{socmed}}</span>
+<div ng-repeat="socmed in team.socmeds">
+  <span>{{socmed.username}}</span>
   <md-button ng-click="removeSocmed(socmed)">X</md-button>
 </div>

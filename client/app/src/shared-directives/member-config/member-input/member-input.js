@@ -11,7 +11,7 @@ angular.module('dsTmApp')
       controller: 'MemberInputCtrl'
     };
   })
-  .controller('MemberInputCtrl', function($scope, _) {
+  .controller('MemberInputCtrl', function($scope, _, SocmedService) {
 
     var newAccount = {
       id: -1,
@@ -28,22 +28,8 @@ angular.module('dsTmApp')
       $scope.user.accounts.splice(idx, 1);
     };
 
-    $scope.accounts = [
-      {
-        id: 1,
-        username: 'HaloBCA',
-        source: 'Twitter'
-      },
-      {
-        id: 2,
-        username: 'BizGuideBCA',
-        source: 'Facebook'
-      },
-      {
-        id: 3,
-        username: 'BizGuideBCA',
-        source: 'Twitter'
-      }
-    ];
+    $scope.accounts = function() {
+      return SocmedService.owned;
+    };
 
   });

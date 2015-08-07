@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('dsTmApp')
-  .service('AccountAddDialog', function($mdDialog, _) {
+  .service('AccountAddDialog', function($mdDialog, _, SocmedService) {
 
     this.open = function(targetEvent) {
       return $mdDialog.show({
@@ -9,7 +9,7 @@ angular.module('dsTmApp')
         templateUrl: 'src/shared-services/account-add-dialog/account-add-dialog.html',
         controller: ['$scope', '$mdDialog', function ($scope, $mdDialog) {
 
-          $scope.selected = {};
+          $scope.selected = null;
 
           $scope.search = {
             source: 'Facebook'
@@ -28,30 +28,14 @@ angular.module('dsTmApp')
           };
 
           $scope.add = function () {
-            $mdDialog.hide();
+            return $mdDialog.hide($scope.selected);
           };
 
           $scope.close = function () {
-            $mdDialog.hide();
+            return $mdDialog.hide();
           };   
 
-          $scope.accounts = [
-            {
-              id: 1,
-              username: 'HaloBCA',
-              source: 'Twitter'
-            },
-            {
-              id: 2,
-              username: 'BizGuideBCA',
-              source: 'Facebook'
-            },
-            {
-              id: 3,
-              username: 'BizGuideBCA',
-              source: 'Twitter'
-            }
-          ];
+          $scope.accounts = SocmedService.available;
 
         }]
       });

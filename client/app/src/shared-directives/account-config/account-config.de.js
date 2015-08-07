@@ -8,6 +8,6 @@ angular.module('dsTmApp.components')
       controller: 'AccountConfigCtrl'
     };
   })
-  .controller('AccountConfigCtrl', function($scope){
-    $scope.teams = ['Team CS BCA', 'TEAM SOCIAL MEDIA BCA'];
+  .controller('AccountConfigCtrl', function($scope, TeamService){
+    $scope.teams = TeamService.teams;
   });

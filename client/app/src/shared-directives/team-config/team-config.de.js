@@ -8,13 +8,13 @@ angular.module('dsTmApp.components')
       controller: 'TeamConfigCtrl'
     };
   })
-  .controller('TeamConfigCtrl', function($scope, TeamInputDialogService) {
+  .controller('TeamConfigCtrl', function($scope, TeamInputDialogService, TeamService) {
     $scope.showTeamInputDialog = showTeamInputDialog;
-    $scope.teams = [];
+    $scope.teams = TeamService.teams;
 
     function showTeamInputDialog(){
       TeamInputDialogService.open().then(function(ans){
-        $scope.teams.push(ans);
+        $scope.teams.push({ name: ans, socmeds: [] });
       });
     }
   });

@@ -11,18 +11,18 @@ angular.module('dsTmApp.components')
       controller: 'SocmedListCtrl'
     };
   })
-  .controller('SocmedListCtrl', function($scope, AccountAddDialog){
-    $scope.socmeds = [];
+  .controller('SocmedListCtrl', function($scope, AccountAddDialog, _, SocmedService){
     $scope.assignAccount = assignAccount;
     $scope.removeSocmed = removeSocmed;
 
-    function removeSocmed(socmedName){
-      var index = $scope.socmeds.indexOf(socmedName);
-      $scope.socmeds.splice(index, 1);
+    function removeSocmed(socmed){
+      $scope.team.socmeds = _.reject($scope.team.socmeds, socmed);
     }
 
     function assignAccount(){
-      AccountAddDialog.open();
-      $scope.socmeds.push('@HaloBCA' + $scope.socmeds.length);
+      AccountAddDialog.open().then(function(x) {
+        if ($scope.team.socmeds.indexOf(x) < 0) $scope.team.socmeds.push(x);
+        SocmedService.owned = _.union(SocmedService.owned, [x]);
+      });
     }
   });
