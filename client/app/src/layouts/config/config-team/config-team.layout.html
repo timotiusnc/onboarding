@@ -8,11 +8,33 @@
           <ds-tm-kpi-form></ds-tm-kpi-form>
         </md-content>
       </md-tab>
+
       <md-tab label="Account Informations">
-        <md-content class="md-padding">
-          ds-tm-socmed-list
+        <md-content class="md-padding" layout="row">
+          <div flex="25">
+            <md-button ng-click="addAccount()">
+              <i class="fa fa-plus"></i>
+              New Account
+            </md-button>
+            <md-list>
+              <div ng-repeat="account in accounts | filter: search">
+                <md-list-item class="md-3-line socmed" ng-class="{ socmed__selected: selected.id === account.id }" ng-click="showAuthor()">
+                  <img ng-src="http://placehold.it/50x50" class="md-avatar"/>
+                  <div class="md-list-item-text">
+                    <h3>{{ account.username }}</h3>
+                    <h4>{{ account.source }}</h4>
+                  </div>
+                </md-list-item>
+              </div>
+            </md-list>
+          </div>
+
+          <div flex="75" ng-show="isAuthorShown">
+            <ds-tm-socmed-authors></ds-tm-socmed-authors>
+          </div>
         </md-content>
       </md-tab>
+      
       <md-tab label="Users">
         <md-content class="md-padding">
           ds-tm-user-list-search

@@ -2,7 +2,24 @@
   <div flex="25">ds-tm-user-list-search</div>
   <div flex="75">
     <h2>Configuration</h2>
-    <ds-tm-team-config></ds-tm-team-config>
-    <user-detail></user-detail>
+    <div layout="row">
+      <md-card flex>
+        <md-card-content>
+          <md-button ui-sref="rt.config-team">CS BCA</md-button>
+        </md-card-content>
+      </md-card>
+
+      <md-card flex>
+        <md-card-content>
+          <md-button ui-sref="rt.config-team">Social Media BCA</md-button>
+        </md-card-content>
+      </md-card>
+
+      <md-card flex>
+        <md-card-content align="center">
+          <md-button ui-sref="rt.config-team"><i class="fa fa-plus fa-2x"></i></md-button>
+        </md-card-content>
+      </md-card>
+    </div>
   </div>
 </div>
