@@ -1,6 +1,6 @@
-<div layout="column" style="max-width: 600px;">
+<div layout="column">
 
-  <div ng-repeat="user in users track by $index" layout-align="center">
+  <div ng-repeat="user in users track by $index" layout-align="center" flex>
     <member-input user="user"></member-input>
     <md-divider />
   </div>
