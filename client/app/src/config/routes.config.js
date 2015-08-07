@@ -6,6 +6,8 @@ angular
     RT: 'rt',
     WORKSPACE: 'rt.workspace',
     QUEUE: 'rt.queue',
+    CONFIG: 'rt.config',
+    CONFIG_TEAM: 'rt.config-team',
     ONBOARDING: 'onboarding',
     ONBOARDING_FINISH:'onboardingfinish'
   })
@@ -34,6 +36,16 @@ angular
         url: '/finish',
         templateUrl: 'src/layouts/onboarding-finish/onboarding-finish.layout.html',
         controller: 'OnboardingFinishLayoutCtrl'
+      })
+      .state(TM_stateConst.CONFIG, {
+        url: '^/config',
+        templateUrl: 'src/layouts/config/config.layout.html',
+        controller: 'ConfigCtrl'
+      })
+      .state(TM_stateConst.CONFIG_TEAM, {
+        url: '^/config/{team_id}',
+        templateUrl: 'src/layouts/config/config-team/config-team.layout.html',
+        controller: 'ConfigTeamCtrl'
       })
       .state('login', {
         url: '^/login',
