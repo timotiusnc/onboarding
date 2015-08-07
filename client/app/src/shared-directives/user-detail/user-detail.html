@@ -1,4 +1,4 @@
-<div layout="column" style="" flex>
+<div layout="column" flex>
 
   <div style="padding: 8px;">
     <span style="font-weight: 500">Email: </span>{{ user.email }}
@@ -11,7 +11,7 @@
       <div>{{ user.email }}</div>
     </div>
 
-    <div layout="column" flex="50">
+    <div layout="column" flex="50" align="right">
       <div style="font-weight: 500">Last seen:</div>
       <div>{{ user.last_seen }}</div>
     </div>
@@ -40,6 +40,12 @@
             <option value="cs">CS</option>
             <option value="member">Member</option>
           </select>
+        </div>
+      </div>
+
+      <div layout="row" layout-align="end center">
+        <div>
+          <md-button>Save Change</md-button>
         </div>
       </div>
 
