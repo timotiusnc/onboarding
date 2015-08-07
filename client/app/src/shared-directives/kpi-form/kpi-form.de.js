@@ -6,7 +6,6 @@ angular.module('dsTmApp.components')
       templateUrl: 'src/shared-directives/kpi-form/kpi-form.de.html',
       restrict: 'E',
       scope: {
-        model: '=',
         onSave: '&'
       },
       controller: 'KpiFormCtrl'
