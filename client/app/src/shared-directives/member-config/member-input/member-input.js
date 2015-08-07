@@ -33,7 +33,7 @@ angular.module('dsTmApp')
     };
 
     $scope.getAccountType = function(x) {
-      return x.type == 'Twitter' ? 'Tw' : 'Fb'; 
+      return x.source == 'Twitter' ? 'Tw' : 'Fb'; 
     }
 
   });

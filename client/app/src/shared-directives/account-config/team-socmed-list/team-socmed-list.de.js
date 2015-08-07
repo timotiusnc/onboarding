@@ -21,6 +21,7 @@ angular.module('dsTmApp.components')
 
     function assignAccount(){
       AccountAddDialog.open().then(function(x) {
+        if (!x) return;
         if ($scope.team.socmeds.indexOf(x) < 0) $scope.team.socmeds.push(x);
         SocmedService.owned = _.union(SocmedService.owned, [x]);
       });

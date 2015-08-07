@@ -29,7 +29,8 @@
 
         <md-list>
           <div ng-repeat="account in accounts | filter: search">
-            <md-list-item class="md-3-line" ng-class="{ selected: selected.id === account.id }" ng-click="select(account)">
+            <md-list-item class="md-3-line socmed" ng-class="{ socmed__selected: selected.id === account.id }" ng-click="select(account)">
+              <img ng-src="http://placehold.it/50x50" class="md-avatar"/>
               <div class="md-list-item-text">
                 <h3>{{ account.username }}</h3>
                 <h4>{{ account.source }}</h4>
