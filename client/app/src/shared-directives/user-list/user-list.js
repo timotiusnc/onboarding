@@ -10,12 +10,19 @@ angular.module('dsTmApp')
       controller: 'UserListCtrl'
     };
   })
-  .controller('UserListCtrl', function($scope, _) {
+  .controller('UserListCtrl', function($scope, $mdDialog, _) {
 
     $scope.search = { username: '' };
 
     $scope.toProperCase = function (str) {
       return _.startCase(str);
+    };
+
+    $scope.userClick = function (ev) {
+      return $mdDialog.show({
+        template: '<md-dialog aria-label="user-detail" class="md-padding"><user-detail></user-detail></md-dialog>',
+        targetEvent: ev,
+      });
     };
 
     $scope.users = [

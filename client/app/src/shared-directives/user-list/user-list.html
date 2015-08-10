@@ -17,14 +17,14 @@
 
     <md-list>
       <md-list-item class="md-3-line" ng-repeat="user in users | filter: search">
-        <div class="md-list-item-text">
+        <md-button class="md-list-item-text" ng-click="userClick($event)">
           <h3>{{ user.username }}</h3>
           <h4>
             <i class="fa" ng-class="{ 'fa-facebook-square': user.account.source === 'Facebook', 'fa-twitter-square': user.account.source === 'Twitter' }"></i>
             {{ user.account.username + ' • ' + toProperCase(user.account.role) }}
           </h4>
-        </div>
-        <md-divider inset></md-divider>
+          <md-divider inset></md-divider>
+        </md-button>
       </md-list-item>
     </md-list>
 

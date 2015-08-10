@@ -1,16 +1,16 @@
-<div layout="column" layout-padding class="config-team">
-  <h2 flex>Configuration > Socmed BCA</h2>
+<div layout="column" layout-padding class="config-team" flex>
+  <h2>Configuration > Socmed BCA</h2>
 
-  <md-content flex class="md-padding">
+  <div flex class="md-padding">
     <md-tabs md-dynamic-height md-border-bottom>
       <md-tab label="Set KPI">
-        <md-content class="md-padding">
+        <div>
           <ds-tm-kpi-form></ds-tm-kpi-form>
-        </md-content>
+        </div>
       </md-tab>
 
       <md-tab label="Account Informations">
-        <md-content class="md-padding" layout="row">
+        <div layout="row">
           <div flex="25">
             <md-button ng-click="addAccount()">
               <i class="fa fa-plus"></i>
@@ -32,15 +32,15 @@
           <div flex="75" ng-show="isAuthorShown">
             <ds-tm-socmed-authors></ds-tm-socmed-authors>
           </div>
-        </md-content>
+        </div>
       </md-tab>
       
       <md-tab label="Users">
-        <md-content class="md-padding">
-          ds-tm-user-list-search
-          ds-tm-user-detail
-        </md-content>
+        <div layout="row" layout-align="space-around start">
+          <user-list flex="25"></user-list>
+          <user-detail></user-detail>
+        </div>
       </md-tab>
     </md-tabs>
-  </md-content>
+  </div>
 </div>
