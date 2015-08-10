@@ -6,12 +6,12 @@ angular.module('dsTmApp')
       templateUrl: 'src/shared-directives/user-detail/user-detail.html',
       restrict: 'E',
       scope: {
+        onSave: '&'
       },
       controller: 'UserDetailCtrl'
     };
   })
   .controller('UserDetailCtrl', function($scope, _) {
-
     $scope.user = {
       id: '700',
       username: 'Bonding James',
