@@ -3,7 +3,7 @@
 angular.module('dsTmApp.screens')
   .controller('ConfigTeamCtrl', function($state, $scope, TeamService, SocmedService, AccountAddDialog) {
   	$scope.teams = TeamService.teams;
-    $scope.accounts = SocmedService.available;
+    $scope.accounts = function() { return SocmedService.getAvailable(); };
     $scope.isAuthorShown = false;
 
     $scope.addAccount = function() {
