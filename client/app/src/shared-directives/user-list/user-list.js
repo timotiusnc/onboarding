@@ -22,11 +22,11 @@ angular.module('dsTmApp')
       return $mdDialog.show({
         template: '<md-dialog aria-label="user-detail" class="md-padding"><user-detail on-save="close()"></user-detail></md-dialog>',
         targetEvent: ev,
-        controller: function($scope, $mdDialog) {
+        controller: ['$scope', '$mdDialog', function ($scope, $mdDialog) {
           $scope.close = function() {
             $mdDialog.hide();
           };
-        }
+        }]
       });
     };
 
